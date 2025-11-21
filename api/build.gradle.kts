@@ -19,9 +19,7 @@ repositories {
 dependencies {
     dependencies {
         implementation(platform("software.amazon.awssdk:bom:2.25.43")) // or latest version
-
         implementation("org.springframework.boot:spring-boot-starter-web")
-
         implementation("software.amazon.awssdk:ses")
         implementation("software.amazon.awssdk:auth")
     }
@@ -33,7 +31,7 @@ jib {
         image = "eclipse-temurin:21-jre"
     }
     to {
-        image = "ghcr.io/util-backend/api:${project.version}"
+        image = "ghcr.io/farahcaa/util-backend/api:${project.version}"
         tags = setOf("${project.version}", "latest")
     }
     container {
